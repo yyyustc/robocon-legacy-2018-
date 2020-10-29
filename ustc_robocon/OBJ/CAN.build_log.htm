@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: u v, P R C, LIC=W9612-9AVAV-04ZSQ-NADJN-QS641-YPYPR
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.14.0.0
+Toolchain Path:  E:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DCM.DLL V1.13.1.0
+Target DLL:      Segger\JL2CM3.dll V2.99.13.0
+Dialog DLL:      TCM.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\ustc_robocon515\USER\CAN.uvprojx
+Project File Date:  05/24/2018
+
+<h2>Output:</h2>
+Build target 'CAN'
+compiling can.c...
+..\HARDWARE\CAN\can.h(73): warning:  #1295-D: Deprecated declaration Trajectory_Planning1 - give arg types
+  u8 Trajectory_Planning1();//开始拿球
+..\HARDWARE\CAN\can.h(74): warning:  #1295-D: Deprecated declaration Trajectory_Planning1_ - give arg types
+  u8 Trajectory_Planning1_();//开始拿球
+..\HARDWARE\CAN\can.h(75): warning:  #1295-D: Deprecated declaration Trajectory_Planning2 - give arg types
+  u8 Trajectory_Planning2();//去第一递位
+..\HARDWARE\CAN\can.h(76): warning:  #1295-D: Deprecated declaration Trajectory_Planning3 - give arg types
+  u8 Trajectory_Planning3();//退后等待
+..\HARDWARE\CAN\can.h(77): warning:  #1295-D: Deprecated declaration Trajectory_Planning3_5 - give arg types
+  u8 Trajectory_Planning3_5();//去第二递位（递彩球2）
+..\HARDWARE\CAN\can.h(78): warning:  #1295-D: Deprecated declaration Trajectory_Planning4 - give arg types
+  u8 Trajectory_Planning4();//回去拿金球
+..\HARDWARE\CAN\can.h(79): warning:  #1295-D: Deprecated declaration Trajectory_Planning5 - give arg types
+  u8 Trajectory_Planning5();//去第二递位（递金球）
+..\HARDWARE\LED\led.h(24): warning:  #1295-D: Deprecated declaration Transfer_Color1 - give arg types
+  u8 Transfer_Color1();
+..\HARDWARE\LED\led.h(25): warning:  #1295-D: Deprecated declaration Transfer_Color2 - give arg types
+  u8 Transfer_Color2();
+..\HARDWARE\LED\led.h(26): warning:  #1295-D: Deprecated declaration Transfer_Gold - give arg types
+  u8 Transfer_Gold();
+..\HARDWARE\LED\led.h(27): warning:  #1295-D: Deprecated declaration reset - give arg types
+  int reset();
+..\HARDWARE\LED\led.h(28): warning:  #1295-D: Deprecated declaration Catch_Ball - give arg types
+  int Catch_Ball();    
+..\HARDWARE\LED\led.h(29): warning:  #1295-D: Deprecated declaration Catch_Ball2 - give arg types
+  int Catch_Ball2();    
+..\HARDWARE\CAN\can.c(265): warning:  #940-D: missing return statement at end of non-void function "SendSpeed"
+  }
+..\HARDWARE\CAN\can.c(251): warning:  #177-D: variable "time" was declared but never referenced
+        int time=3;
+..\HARDWARE\CAN\can.c(253): warning:  #177-D: variable "cnt" was declared but never referenced
+    static int cnt;     
+..\HARDWARE\CAN\can.c(377): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                if((abs(error_x)<4)&&(abs(error_y)<4)&&abs(error_theta)<0.8){
+..\HARDWARE\CAN\can.c(334): warning:  #550-D: variable "error_last2_x" was set but never used
+        static float error_x = 0, error_last1_x=0,error_last2_x=0;
+..\HARDWARE\CAN\can.c(335): warning:  #550-D: variable "error_last2_y" was set but never used
+        static float error_y = 0, error_last1_y=0,error_last2_y=0;
+..\HARDWARE\CAN\can.c(336): warning:  #550-D: variable "error_last2_theta" was set but never used
+        static float error_theta = 0, error_last1_theta=0, error_last2_theta=0;///////////////////////
+..\HARDWARE\CAN\can.c(403): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        motor2 =(int)(-motor2*30*19/(3.1415926f*r));
+..\HARDWARE\CAN\can.c(404): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        motor1 =(int)(-motor1*30*19/(3.1415926f*r));
+..\HARDWARE\CAN\can.c(405): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        motor3 =(int)(-motor3*30*19/(3.1415926f*r));
+..\HARDWARE\CAN\can.c(397): warning:  #177-D: variable "k" was declared but never referenced
+        int k=2;
+..\HARDWARE\CAN\can.c(449): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    Vgy = 0.018*Vgx;
+..\HARDWARE\CAN\can.c(452): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    t+=0.005;
+..\HARDWARE\CAN\can.c(473): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(t<=0.5){Vgx=1.86667/0.5*t;}
+..\HARDWARE\CAN\can.c(474): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    else if(t<=1.5){Vgx=1.86667;}
+..\HARDWARE\CAN\can.c(475): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        else if(t<=2.0){Vgx=1.86667/0.5*(2.0-t);}
+..\HARDWARE\CAN\can.c(475): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        else if(t<=2.0){Vgx=1.86667/0.5*(2.0-t);}
+..\HARDWARE\CAN\can.c(476): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    Vgy = 0.018*Vgx;
+..\HARDWARE\CAN\can.c(479): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    t+=0.005;
+..\HARDWARE\CAN\can.c(512): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+          t+=0.005;
+..\HARDWARE\CAN\can.c(518): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(t>=6.5)
+..\HARDWARE\CAN\can.c(548): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    t+=0.005;
+..\HARDWARE\CAN\can.c(581): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    t+=0.005;
+..\HARDWARE\CAN\can.c(569): warning:  #177-D: variable "Vgx" was declared but never referenced
+        float Vgx;                 //volocity goal 目标速度
+..\HARDWARE\CAN\can.c(614): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    Vgy = 0.22*Vgx; 
+..\HARDWARE\CAN\can.c(621): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    t+=0.005;
+..\HARDWARE\CAN\can.c(622): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(t>=7.4)
+..\HARDWARE\CAN\can.c(652): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+    t+=0.005;
+..\HARDWARE\CAN\can.c(658): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(t>=8.5)
+..\HARDWARE\CAN\can.c(686): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        distance=(87.055*temp_t-26.33)/100;//实际距离 米
+..\HARDWARE\CAN\can.c(692): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(abs(distance-0.18)<0.02)
+..\HARDWARE\CAN\can.c(692): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(abs(distance-0.18)<0.02)
+..\HARDWARE\CAN\can.c(692): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+        if(abs(distance-0.18)<0.02)
+..\HARDWARE\CAN\can.c(695): warning:  #940-D: missing return statement at end of non-void function "Pos_Laser_Control"
+  }
+..\HARDWARE\CAN\can.c: 47 warnings, 0 errors
+linking...
+Program Size: Code=42086 RO-data=1226 RW-data=552 ZI-data=3472  
+FromELF: creating hex file...
+"..\OBJ\CAN.axf" - 0 Error(s), 47 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\Administrator\Desktop\ustc_robocon515\USER\RTE
+  E:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+</pre>
+</body>
+</html>

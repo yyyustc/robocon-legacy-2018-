@@ -1,0 +1,218 @@
+
+enum Status
+{
+    INIT,           //初始化，在main函数中初始化完成后将status置为WATING
+    WATING,         //
+    
+    TRAIL1,         //从起始位置到投掷点1
+    GETTING1,       //在投掷点1接球
+    THROW1,         //在投掷点1投球
+    
+    TRAIL2,         //从投掷点1到投掷点2
+    GETTING2,       //在投掷点2接球
+    THROW2,         //在投掷点2投球
+    
+    TRAIL3,         //从投掷点2到投掷点3
+    GETTING3,       //在投掷点3接球
+    THROW3,         //在投掷点3投球
+    
+    TRAIL4,         //从投掷点3返回投掷点2
+    GETTING4,       //在投掷点2接球
+    THROW4,         //在投掷点2投球
+    
+    STOP            //停止
+}status = INIT;
+
+const char NUM_GOLD = 5;    //金球数量，最大失球数
+
+char is_started = 0;    //开始信号
+char is_arrived;        //目的位置到达信号
+char is_getted;         //接球成功信号
+char is_thrown;         //0表示未投掷或仍无结果，1表示投中，-1表示未投中
+char count_miss;        //未投中计数
+
+
+void control()
+{
+    switch (status)
+    {
+        case WATING:
+            if (is_started)
+            {
+                status = TRAIL1;
+                is_arrived = 0;
+                
+                //TODO: 设定从起始位置到投掷点1的参数，开始行动，到达后将is_arrived置1.
+                
+                
+            }
+            break;
+        case TRAIL1:
+            if (is_arrived)
+            {
+                status = GETTING1;
+                is_getted = 0;
+                
+                //TODO: 设置投掷点1接球参数，开始接球，接到后将is_getted置1
+                
+                
+            }
+            break;
+        case GETTING1:
+            if (is_getted)
+            {
+                status = THROW1;
+                is_thrown = 0;
+                
+                //TODO: ?????1????,????,????is_thrown?1,?????-1
+                
+                
+            }
+            break;
+        case THROW1:
+            if (is_thrown == 1)
+            {
+                status = TRAIL2;
+                is_arrived = 0;
+                
+                //TODO: ??????1????2???,????,????is_arrived?1
+                
+                
+            }
+            else if (is_thrown == -1)
+            {
+                status = GETTING1;
+                is_getted = 0;
+                
+                //TODO: ???????1????,????,????is_getted?1
+                
+                
+            }
+            break;
+        case TRAIL2:
+            if (is_arrived)
+            {
+                status = GETTING2;
+                is_getted = 0;
+                
+                //TODO: ?????2????,????,????is_getted?1
+                
+                
+            }
+            break;
+        case GETTING2:
+            if (is_getted)
+            {
+                status = THROW2;
+                is_thrown = 0;
+                
+                //TODO: ?????2????,????,????is_thrown?1,?????-1
+                
+                
+            }
+            break;
+        case THROW2:
+            if (is_thrown == 1)
+            {
+                status = TRAIL3;
+                is_arrived = 0;
+                
+                //TODO: ??????2????3???,????,????is_arrived?1
+                
+                
+            }
+            else if (is_thrown == -1)
+            {
+                status = GETTING2;
+                is_getted = 0;
+                
+                //TODO: ???????2????,????,????is_getted?1
+                
+                
+            }
+            break;
+        case TRAIL3:
+            if (is_arrived)
+            {
+                status = THROW3;  //????,????GETTING3??
+                is_thrown = 0;
+                count_miss = 0;
+                
+                //TODO: ?????2????,????,????is_thrown?1,?????-1
+                
+                
+            }
+            break;
+        case GETTING3:
+            break;
+        case THROW3:
+            if (is_thrown == 1)
+            {
+                status = STOP;
+                is_arrived = 0;
+                
+                //TODO: ??????2????3???,????,????is_arrived?1
+                
+                
+            }
+            else if (is_thrown == -1)
+            {
+                count_miss++;
+                if (count_miss >= NUM_GOLD)
+                {
+                    status = TRAIL4;
+                    is_arrived = 0;
+                
+                    //TODO: ??????3?????2???,????,????is_arrived?1
+                
+                
+                }
+                else
+                {
+                    status = THROW3;  //????,????GETTING3??
+                    is_thrown = 0;
+                    
+                    
+                    //TODO: ???????3????,????,????is_thrown?1,?????-1
+                    
+                    
+                }
+            }
+            break;
+        case TRAIL4:
+            if (is_arrived)
+            {
+                status = GETTING4;
+                is_getted = 0;
+                
+                //TODO: ????????2????,????,????is_getted?1
+                
+                
+            }
+            break;
+        case GETTING4:
+            if (is_getted)
+            {
+                status = THROW4;
+                is_thrown = 0;
+                
+                //TODO: ????????2????,????,????is_thrown?1,?????-1
+                
+                
+            }
+            break;
+        case THROW4:
+            if (is_thrown)
+            {
+                status = GETTING4;
+                is_getted = 0;
+                
+                //TODO: ??????????2????,????,????is_getted?1
+                
+                
+            }
+            break;
+        default:
+            break;
+    }
+}
